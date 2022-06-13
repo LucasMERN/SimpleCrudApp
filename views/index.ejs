@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leet Quotes</title>
+    </head>
+
+    <body>
+        <h1>Quotes from the best coders in the Biz...</h1>
+
+        <section data-position="'add-quote">
+            <h2>Add Quote</h2>
+
+            <form action="/quotes" method="POST">
+                <input type="text" placeholder="name" name="name">
+                <input type="text" placeholder="quote" name="quote">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <h2> Quotes </h2>
+        <ul class="quotes">
+            <!-- Looping through our body-parser object to create a list item that includes a span with the name and a span with the quote for every key-value pair in the object. -->
+        <% for(let i = 0; i < quotes.length; i++) {%>
+            <li class="quote">
+                <span><%= quotes[i].name %>:</span>
+                <span><%= quotes[i].quote %></span>
+            </li>
+        <% } %>
+        </ul>
+
+        <div>
+            <h2>Lucas is King</h2>
+            <p>Replace Jacob's quote with one of Lucas's quotes.</p>
+            <button id="update-button">Replace some quotes</button>
+        </div>
+
+        <div>
+            <h2>Remove Lucas!</h2>
+            <p>
+            Delete one of Lucas's quotes. Does nothing if there are no more quotes from Lucas.
+            </p>
+            <button id="delete-button">Delete Lucas's quote</button>
+        </div>
+
+        <div id="message"></div>
+
+        <script src="/public/main.js"></script>
+    </body>
+</html>
